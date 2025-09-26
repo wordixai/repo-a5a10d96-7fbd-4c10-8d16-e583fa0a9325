@@ -2,17 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-The @apply directive should not be used with the group utility class.
-*/
-
 @layer base {
   :root {
-   
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --foreground-light: 0 0% 90%;
+    --foreground-lighter: 0 0% 65%;
+    --foreground-muted: 0 0% 40%;
+    
+    --surface-75: 0 0% 4%;
+    --surface-100: 0 0% 6%;
+    --surface-200: 0 0% 8%;
+    --surface-300: 0 0% 10%;
+    
+    --border: 0 0% 15%;
+    --border-muted: 0 0% 12%;
+    --border-strong: 0 0% 20%;
+    --border-stronger: 0 0% 25%;
+    
+    --brand-400: 152 57% 44%;
+    --brand-500: 151 71% 45%;
+    --brand-600: 151 83% 47%;
+    --brand: 151 83% 47%;
+    --brand-link: 151 83% 47%;
+    --brand-300: 151 47% 60%;
+    
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 65%;
+    
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+    
+    --primary: 151 83% 47%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    
+    --input: 0 0% 15%;
+    --ring: 151 83% 47%;
+    
+    --radius: 0.5rem;
   }
-
-  .dark {
-
+  
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  .text-foreground-light {
+    color: hsl(var(--foreground-light));
+  }
+  
+  .text-foreground-lighter {
+    color: hsl(var(--foreground-lighter));
+  }
+  
+  .text-foreground-muted {
+    color: hsl(var(--foreground-muted));
+  }
+  
+  .text-brand {
+    color: hsl(var(--brand));
+  }
+  
+  .text-brand-link {
+    color: hsl(var(--brand-link));
+  }
+  
+  .bg-surface-75 {
+    background-color: hsl(var(--surface-75));
+  }
+  
+  .bg-surface-100 {
+    background-color: hsl(var(--surface-100));
+  }
+  
+  .bg-surface-200 {
+    background-color: hsl(var(--surface-200));
+  }
+  
+  .bg-surface-300 {
+    background-color: hsl(var(--surface-300));
+  }
+  
+  .border-muted {
+    border-color: hsl(var(--border-muted));
+  }
+  
+  .border-strong {
+    border-color: hsl(var(--border-strong));
+  }
+  
+  .border-stronger {
+    border-color: hsl(var(--border-stronger));
+  }
+  
+  .bg-brand-400 {
+    background-color: hsl(var(--brand-400));
+  }
+  
+  .bg-brand-500 {
+    background-color: hsl(var(--brand-500));
+  }
+  
+  .bg-brand-600 {
+    background-color: hsl(var(--brand-600));
+  }
+  
+  .bg-brand-300 {
+    background-color: hsl(var(--brand-300));
+  }
+  
+  .outline-brand-600 {
+    outline-color: hsl(var(--brand-600));
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee 90s linear infinite;
+  }
+  
+  .animate-marquee-reverse {
+    animation: marquee-reverse 30s linear infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  .pause {
+    animation-play-state: paused;
+  }
+  
+  .run {
+    animation-play-state: running;
+  }
+  
+  .motion-safe\:group-hover\:run:hover {
+    animation-play-state: running;
+  }
+  
+  .motion-safe\:group-hover\:pause:hover {
+    animation-play-state: paused;
   }
 }
