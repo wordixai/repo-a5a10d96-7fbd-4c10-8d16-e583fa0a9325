@@ -25,7 +25,7 @@ export function CompanyLogos() {
             {logos.map((logo) => (
               <div key={logo.name} className="h-12 lg:h-12 w-max !inline-block">
                 <img
-                  src={logo.src}
+                  src={logo.s
                   alt={logo.name}
                   className="h-12 lg:h-12 !min-h-12 lg:!min-h-12 w-auto block"
                   draggable="false"
